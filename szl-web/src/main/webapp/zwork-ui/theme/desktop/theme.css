@@ -1,0 +1,66 @@
+/* 表单元素 */
+input, textarea, select{margin:0;padding:2px;line-height:15px;font-size:12px;border-style:solid; border-width:1px;border-color:#a2bac0 #b8d0d6 #b8d0d6 #a2bac0;}
+input.readonly, textarea.readonly{border-color:#9eabb3 #d5dbdf #d5dbdf #9eabb3;background-color:#F6F6F6;}
+input.disabled, textarea.disabled{border-color:#9eabb3 #d5dbdf #d5dbdf #9eabb3;background-color:#F6F6F6;}
+input.required, textarea.required{background:#fff url(image/form/required.gif) scroll no-repeat right;}
+select.required{padding:2px 5px;background:#fff url(image/form/required.gif) no-repeat scroll -1px -3px;}
+input.required-date{background:#fff url(image/form/required-date.gif) no-repeat scroll right;}
+input.date{background:#fff url(image/form/datePicker.gif) no-repeat scroll right;}
+
+/* 页面中的提示信息 */
+#system_msg{display:none;}
+
+/* 表单验证错误提示*/
+span.error{color:red;margin-left:5px;padding:4px 4px 4px 20px;background:url("image/form/invalid.gif") left center no-repeat;text-align:left}\
+input.error, textarea.error { border-color:#F80C11 #FB7E81 #FB7E81 #F80C11;}
+
+
+/* 工具栏，用于存放按钮 */
+.toolbar{background:#EEF4F5;border-top:1px solid #B4D1D3;}
+.toolbar .zwork-button{float:left;}
+.toolbar .buttons{float:right;margin-top:1px;}
+.zwork-datagrid .toolbar{border-top:0}
+
+/* 定义按钮样式 */
+.addButton{background: url("image/button/add.gif");}
+.editButton{background: url("image/button/edit.gif");}
+.deleteButton{background: url("image/button/delete.gif");}
+.viewButton{background: url("image/button/view.gif");}
+.saveButton{}
+.cancelButton{}
+.closeButton{}
+
+/* 常见页面 */
+.page{}
+
+/*查询列表*/
+.page .search{background: #EEF4F5;border-bottom:1px solid #B4D1D3;}
+.page .search .layout_center{overflow:hidden;}
+.page .search .searchContent{padding:10px;}
+.page .search .searchContent div{float:left;margin:5px 50px 5px 0px;height:25px;}
+.page .search .searchContent div label{padding:0px 10px 0px 0px;line-height:22px;font-weight:bold;}
+.page .search .toolbar{border-top:0}
+
+
+.page .content{background:white;height:100%;}
+
+/* 定义每行可以展示的div个数*/
+.page .content .row1{width: 96%;}
+.page .content .row2{width: 48%;}
+.page .content .row3{width: 32%;}
+.page .content .row4{width: 24%;}
+.page .content .lastRow{border-bottom:0!important;}
+
+
+/* 新增/修改 */
+.page .content .editTable{margin:10px;}
+.page .content .editTable div{float:left;height:25px;margin-top:5px;padding-bottom:5px;border-bottom:1px dashed #B4D1D3;}
+.page .content .editTable div label{float:left;width:100px;text-align:right;padding:0px 10px 0px 0px;line-height:22px;font-weight:bold;}
+.page .content .editTable div span{text-align:left;line-height:22px;}
+
+
+/*查看*/
+.page .content .viewTable{margin:10px;}
+.page .content .viewTable div{float:left;height:25px;margin-top:5px;padding-bottom:5px;border-bottom: 1px dashed #B4D1D3;}
+.page .content .viewTable div label{float:left;width:100px;text-align:right;padding:0px 10px 0px 0px;line-height:22px;font-weight:bold;}
+.page .content .viewTable div span{text-align:left;line-height:22px;}

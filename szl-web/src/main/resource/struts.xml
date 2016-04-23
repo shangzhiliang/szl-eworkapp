@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 设置url地址中action别名的后缀匹配-->
+	<!--  
+	<constant name="struts.action.extension" value="action,do,ihtml"/>
+	-->
+    <!-- 设置xml文件修改后重新加载 web容器-->
+    <constant name="struts.configuration.xml.reload" value="true"/>
+    <!-- 设置为true时url地址可以通过【action别名!方法名】访问具体方法 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" /> 
+    
+    <package name="default" namespace="/" extends="struts-default">
+    
+		<action name="hello" class="com.szl.web.action.HelloAction">
+			<result name="success">/page/hello.jsp</result>
+		</action>
+		<!-- 可以为一个action写多个方法，通过action 节点属性method指定要执行那个方法，这样可以减少action的数量，但是无法减少配置的数量 -->
+		<!--  
+		<action name="user_addInput" class="com.szl.web.action.UserAction" method="addInput">
+			<result name="success" >/page/addInput.jsp</result>
+		</action>
+		<action name="user_add" class="com.szl.web.action.UserAction" method="add">
+			<result name="success" >/page/add.jsp</result>
+		</action>
+		<action name="user_list" class="com.szl.web.action.UserAction" method="list">
+			<result name="success" >/page/list.jsp</result>
+		</action>
+		-->
+		<!-- 以下方式可以仅仅配置一个action，之后通过在调用的时候动态判断使用哪个方法，这种方式虽然减少了action
+		的配置，但是依然要增加大量的result节点配置 -->
+		<!--  
+		<action name="user" class="com.szl.web.action.UserAction">
+			<result name="addInput">/page/addInput.jsp</result>
+			<result name="add">/page/add.jsp</result>
+			<result name="list">/page/list.jsp</result>
+		</action>
+		-->
+		<!-- 使用参数匹配方式配置,一个* 代替一个字符串匹配，{1}标识第一个*的内容，{2}标识第二*的内容，依次类推 -->
+		<action name="*_*" class="com.szl.web.action.{1}Action" method="{2}">
+			<result name="success">/page/{1}/{2}.jsp</result>
+			<!-- 设置重定向，可以指定跳转到某个action -->
+			<!--  
+			<result type="redirect" name="r_list">/{1}_list.action</result>
+			-->
+		</action>
+		
+		<action name="user*" class="com.szl.web.action.UserController" method="{1}">  
+       	 	<result name="success">/view/common/message.jsp</result>  
+        	<result name="error">/view/userLogin.jsp</result>  
+    	</action>  
+    </package>
+
+</struts>

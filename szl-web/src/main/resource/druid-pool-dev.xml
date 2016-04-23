@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">  
+<properties>  
+    <comment>druid pool 配置文件</comment>
+    <!-- 基本属性 url、user、password -->
+    <entry key="url">jdbc:mysql://10.1.5.111:3306/idp_dev?useUnicode=true&amp;characterEncoding=utf-8</entry>
+    <entry key="username">idp_dev</entry>
+    <entry key="password">idp_dev</entry>
+    
+    <!-- 配置初始化大小、最小、最大 -->
+    <entry key="initialSize">1</entry>
+    <entry key="minIdle">1</entry> 
+    <entry key="maxActive">20</entry>
+    
+    <!-- 配置获取连接等待超时的时间 -->
+   	<entry key="maxWait">60000</entry>
+
+   	<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+   	<entry key="timeBetweenEvictionRunsMillis">60000</entry>
+   	
+   	<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+   	<entry key="minEvictableIdleTimeMillis">300000</entry>
+   	
+   	<entry key="validationQuery">SELECT 'x'</entry>
+   	<entry key="testWhileIdle">true</entry>
+   	<entry key="testOnBorrow">false</entry>
+   	<entry key="testOnReturn">false</entry>
+
+   	<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+   	<entry key="poolPreparedStatements">false</entry>
+   	<entry key="maxPoolPreparedStatementPerConnectionSize">20</entry>
+
+   	<!-- 配置监控统计拦截的filters -->
+   	<entry key="filters">stat</entry> 
+</properties>  

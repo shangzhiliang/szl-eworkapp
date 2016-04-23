@@ -1,0 +1,50 @@
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
+<% 
+	String basePath = request.getContextPath();
+	System.out.println(basePath);
+	String serverName = request.getServerName();
+	int port = request.getServerPort();
+	System.out.println(serverName);
+	basePath = "http://"+serverName+":"+port+""+basePath;
+	System.out.println("basePath:"+basePath);
+	request.setAttribute("basePath", basePath);
+%>
+
+	<!-- jQuery lib jQuery库 -->
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/lib/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/lib/jquery-migrate-1.2.1.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/lib/jquery.ui-1.8.11.min.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/js/pwd.js"></script>
+	<!-- jQuery lib jQuery库 -->
+	
+	<!-- jQuery plugins jQuery插件 -->
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/jquery.cookie.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/jquery.form.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/jquery.metadata.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/jquery.tablesort.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/jquery.validate.min-1.8.1.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/jquery.validate.message.zh.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/jquery.validate.method.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/zui-min-1.1.0.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/zui-theme-classic-min-1.1.0.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/zui-theme-classic-home-min-1.1.0.js"></script>
+	<link href="<%=basePath %>/zwork-ui/skin/dwz/zwork.dwz.css" rel="stylesheet" type="text/css" />
+	<!-- plugin 插件 -->
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/xheditor-1.1.6/xheditor-zh-cn.min.js"></script>
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/My97DatePicker/WdatePicker.js"></script>
+	
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/treeview/jquery.treeview.js"></script>
+	<link href="<%=basePath %>/zwork-ui/plugin/treeview/jquery.treeview.css" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/ztree/jquery.ztree-2.6.js"></script>
+	<link href="<%=basePath %>/zwork-ui/plugin/ztree/zTreeStyle.css" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" src="<%=basePath %>/zwork-ui/plugin/optiontransferselect/jquery.optiontransferselect.js"></script>
+	<link href="<%=basePath %>/zwork-ui/plugin/optiontransferselect/jquery.optiontransferselect.css" rel="stylesheet" type="text/css" />
+	
+	<link href="<%=basePath %>/zwork-ui/theme/classic/home.css" rel="stylesheet" type="text/css" />
+	<link href="<%=basePath %>/zwork-ui/theme/classic/theme.css" rel="stylesheet" type="text/css" />
+	
+	<script type="text/javascript" src="<%=basePath %>/js/md5.js"></script>

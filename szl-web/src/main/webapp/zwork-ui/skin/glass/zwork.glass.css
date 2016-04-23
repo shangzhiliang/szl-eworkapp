@@ -1,0 +1,431 @@
+﻿/*-----------------------核心样式----------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { margin:0px; padding:0px; font-size:12px;border: 0;}
+form{width: 100%;height: 100%;}
+
+.zwork-mask{height: 100%;width: 100%;background: url("image/mask.png");position: absolute;left: 0px;top: 0px;}
+.zwork-ajaxanimate{background: url("image/ajaxanimate.gif") right top no-repeat;height: 100%;width:100%;position: absolute;z-index: 1000000;}
+.javascript{display: none;}
+/*
+ * jQuery UI Resizable 1.8.8
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Resizable#theming
+ */
+.ui-resizable { position: relative;}
+.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block;}
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px;background: url("image/resize_se.gif"); }
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+
+
+
+/*-----------------------提供的默认样式----------------------------*/
+/** button ico **/
+.button_ico_add{background: url("image/button/ico/add.gif");}
+.button_ico_delete{background: url("image/button/ico/delete.gif");}
+.button_ico_view{background: url("image/button/ico/view.gif");}
+.button_ico_edit{background: url("image/button/ico/edit.gif");}
+/** link ico **/
+.link_ico_default{background:url("image/link/ico.png"); }
+
+
+
+/*-----------------------组件样式----------------------------*/
+/** window样式 **/
+.zwork-window{position: absolute;width: 400px;height: 300px;overflow: hidden;}
+.zwork-window .window_top{height: 25px;width: 100%;overflow: hidden;}
+
+.zwork-window .window_top .window_border{position: absolute;width: 100%;height: 25px;z-index: 1;overflow: hidden;}
+.zwork-window .window_top .window_border .window_left{ width: 5px; height: 25px; background: url(image/window/border/wn.png) no-repeat; float: left; }
+.zwork-window .window_top .window_border .window_center{ width: 390px; height: 25px; background: url(image/window/border/n.png) repeat-x; float: left; }
+.zwork-window .window_top .window_border .window_right{ width: 5px; height: 25px; background: url(image/window/border/en.png) no-repeat; float: left; }
+
+.zwork-window .window_top .window_titlebar{width: 100%;height: 25px;position: absolute;z-index: 2;overflow: hidden;}
+.zwork-window .window_top .window_titlebar .window_ico{width: 15px;height: 20px;float: left;margin-top: 5px;}
+.zwork-window .window_top .window_titlebar .window_title{width: 310px;height: 25px;line-height: 25px;float: left;text-align: left;overflow: hidden;font-weight: bold;color: #666666;}
+.zwork-window .window_top .window_titlebar .window_buttons{width: 93px;height: 18px;float: left;overflow: hidden;}
+.zwork-window .window_top .window_titlebar .window_buttons div{height: 17px;float: left;border: 0;cursor: pointer;}
+
+.zwork-window .window_top .window_titlebar .window_buttons .window_close{border:1px solid #D8D6D2; border-top:0px;width:37px;background: url("image/window/button/close.gif") no-repeat;margin-right: 5px;}
+.zwork-window .window_top .window_titlebar .window_buttons .window_close_hover{background: url("image/window/button/close_hover.png") no-repeat;}
+.zwork-window .window_top .window_titlebar .window_buttons .window_maxre{border:1px solid #D8D6D2; border-top:0px;border-right:0px;width:23px;background: url("image/window/button/maxre.gif") no-repeat;}
+.zwork-window .window_top .window_titlebar .window_buttons .window_maxre_hover{background: url("image/window/button/maxre_hover.png") no-repeat;}
+.zwork-window .window_top .window_titlebar .window_buttons .window_min{border:1px solid #D8D6D2; border-top:0px;border-right:0px;border-left:0px;width:24px;background: url("image/window/button/min.gif") no-repeat;}
+.zwork-window .window_top .window_titlebar .window_buttons .window_min_hover{background: url("image/window/button/min_hover.png");}
+
+.zwork-window .window_top .window_titlebar .window_buttons .window_disabled{background: url("none.png");border: 0px;}
+
+.zwork-window .window_center{height: 250px;position: relative;}
+.zwork-window .window_center .window_loading{position: absolute;z-index: 100000;display: none;}
+.zwork-window .window_center .window_leftborder{height: 250px;width: 5px;float: left;background: url(image/window/border/w.png) repeat-y;}
+.zwork-window .window_center .window_content{height: 250px;width: 390px;float: left;overflow: auto;background: url(image/window/border/c.png);}
+.zwork-window .window_center .window_scroll{height: 250px;width: 0px;float: left;}
+.zwork-window .window_center .window_rightborder{height: 250px;width: 5px;float: left;background: url(image/window/border/e.png) repeat-y;}
+
+.zwork-window .window_bottom{height: 5px;width: 100%;}
+.zwork-window .window_bottom .window_border{position: absolute;width: 100%;height: 5px;z-index: 1;}
+.zwork-window .window_bottom .window_border .window_left{ width: 5px; height: 5px; background: url(image/window/border/ws.png) no-repeat; float: left; }
+.zwork-window .window_bottom .window_border .window_center{ width: 390px; height: 5px; background: url(image/window/border/s.png) repeat-x; float: left; }
+.zwork-window .window_bottom .window_border .window_right{ width: 5px; height: 5px; background: url(image/window/border/es.png) no-repeat; float: left; }
+.zwork-window .window_bottom .window_statebar{position: absolute;width: 100%;height: 20px;z-index: 2;}
+
+.zwork-window-animate{background: #EEF4F4;position: absolute;border: 1px solid #B4D1D3;z-index: 10000000; overflow: hidden;}
+
+.zwork-window_shadow {width:100px;height:100px;position: absolute;z-index: 10000;top:100px;left:100px; overflow: hidden;}
+.zwork-window_shadow .shadow_top{height: 6px;overflow: hidden;}
+.zwork-window_shadow .shadow_top .shadow_left{height: 6px;width: 6px;background: url("image/window/shadow/wn.png");float: left;overflow: hidden;}
+.zwork-window_shadow .shadow_top .shadow_center{height: 6px;width: 88px;background: url("image/window/shadow/n.png");float: left;overflow: hidden;}
+.zwork-window_shadow .shadow_top .shadow_right{height: 6px;width: 6px;background: url("image/window/shadow/en.png");float: left;overflow: hidden;}
+
+.zwork-window_shadow .shadow_center{height: 88px; overflow: hidden;}
+.zwork-window_shadow .shadow_center .shadow_left{height: 88px;width:6px;background: url("image/window/shadow/w.png");float: left;overflow: hidden;}
+.zwork-window_shadow .shadow_center .shadow_center{height: 88px;width:88px;float: left;overflow: hidden;}
+.zwork-window_shadow .shadow_center .shadow_right{height: 88px;width:6px;background: url("image/window/shadow/e.png");float: left;overflow: hidden;}
+
+.zwork-window_shadow .shadow_bottom{height: 6px; overflow: hidden;}
+.zwork-window_shadow .shadow_bottom .shadow_left{height: 6px;width: 6px;background: url("image/window/shadow/ws.png");float: left;overflow: hidden;}
+.zwork-window_shadow .shadow_bottom .shadow_center{height: 6px;width: 88px;background: url("image/window/shadow/s.png");float: left;overflow: hidden;}
+.zwork-window_shadow .shadow_bottom .shadow_right{height: 6px;width: 6px;background: url("image/window/shadow/es.png");float: left;overflow: hidden;}
+
+
+/** messager样式 **/
+.zwork-messager{}
+.zwork-messager .messager_content{overflow: hidden;}
+.zwork-messager .messager_bar{height: 29px;border-top: 1px solid #B4D1D3;}
+
+.zwork-messager .messager_content .msg_left{height: 100%;width: 80px;float: left;}
+.zwork-messager .messager_content .msg_right{height:100%;overflow: auto;padding: 5px;word-wrap:break-word;word-break:break-all;}
+
+.zwork-messager .messager_content .confirm_ico{background: url("image/messager/confirm.png") center top no-repeat;}
+.zwork-messager .messager_content .info_ico{background: url("image/messager/info.png") center top no-repeat;}
+.zwork-messager .messager_content .error_ico{background: url("image/messager/error.png") center top no-repeat;}
+.zwork-messager .messager_content .warn_ico{background: url("image/messager/warn.png") center top no-repeat;}
+.zwork-messager .messager_content .success_ico{background: url("image/messager/success.png") center top no-repeat;}
+
+
+/** accordion样式 **/
+.zwork-accordion{overflow: hidden;}
+.zwork-accordion .accordion_title{font-weight: bold;color: #3a3a3a;text-indent: 10px;height: 25px;line-height: 25px;background: url("image/accordion/accordion.png");cursor: pointer;overflow: hidden;}
+.zwork-accordion .accordion_title_hover{background: url("image/accordion/accordion.png") 0px -25px;}
+.zwork-accordion .accordion_top{border-top: 1px solid #D4D5D6;}
+.zwork-accordion .accordion_bottom{border-bottom: 1px solid #D4D5D6;}
+.zwork-accordion .accordion_content{height:0px;overflow: auto;background: url("image/accordion/content.png");}
+
+
+/** button样式 **/
+.zwork-button{height: 23px;cursor: pointer;margin: 2px;overflow: hidden;}
+.zwork-button a{text-decoration: none;color: black;}
+.zwork-button .button_left{width: 5px;height: 23px;background: url("image/button/button.png") no-repeat 0 0;float: left;}
+.zwork-button .button_ico{width: 23px;height: 23px;float: left;display: none;background: url("image/button/button.png") repeat-x 0 -23px;overflow: hidden;}
+.zwork-button .button_ico img{height: 16px;width: 16px;margin: 4px;}
+.zwork-button .button_center{height: 23px;background: url("image/button/button.png") repeat-x 0 -23px;float: left;text-align: center;overflow: hidden;line-height: 23px;white-space:nowrap;}
+.zwork-button .button_center button{border: 0px;background: none;height: 23px;cursor: pointer;}
+.zwork-button .button_center input{border: 0px;background: none;height: 23px;cursor: pointer;}
+.zwork-button .button_right{width: 5px;height: 23px;background: url("image/button/button.png") no-repeat 0 -46px;float: left;}
+
+.zwork-button_hover .button_left{background: url("image/button/button.png") no-repeat 0 -69px;}
+.zwork-button_hover .button_ico{background: url("image/button/button.png") repeat-x 0 -92px;}
+.zwork-button_hover .button_center{background: url("image/button/button.png") repeat-x 0 -92px;}
+.zwork-button_hover .button_right{background: url("image/button/button.png") no-repeat 0 -115px;}
+
+.zwork-button_active .button_left{background: url("image/button/button.png") no-repeat 0 -69px;}
+.zwork-button_active .button_ico{background: url("image/button/button.png") repeat-x 0 -92px;}
+.zwork-button_active .button_center{background: url("image/button/button.png") repeat-x 0 -92px;}
+.zwork-button_active .button_right{background: url("image/button/button.png") no-repeat 0 -115px;}
+
+
+/** contextmenu样式 **/
+.zwork-contextmenu{position: absolute;z-index: 6000000;height: 300px;width: 200px;top:100px;left: 100px;}
+.zwork-contextmenu div{overflow: hidden;}
+.zwork-contextmenu .contextmenu_top{height: 1px;background: #B8D0D6;overflow: hidden;}
+.zwork-contextmenu .contextmenu_top .contextmenu_left{height: 1px;width:1px;float: left;}
+.zwork-contextmenu .contextmenu_top .contextmenu_center{height: 1px;width: 198px;float: left;}
+.zwork-contextmenu .contextmenu_top .contextmenu_right{height: 1px;width:1px;float: left;}
+
+.zwork-contextmenu .contextmenu_center{height: 298px;overflow: hidden;}
+.zwork-contextmenu .contextmenu_center .contextmenu_left{height: 298px;width:1px;background: #B8D0D6;float: left;}
+.zwork-contextmenu .contextmenu_center .contextmenu_center{height: 298px;width: 198px;background: url("image/contextmenu/bg.png");float: left;}
+
+.zwork-contextmenu .contextmenu_center .contextmenu_center .contextmenu_item{height: 20px;cursor: pointer;overflow: hidden;}
+.zwork-contextmenu .contextmenu_center .contextmenu_center .contextmenu_item .contextmenu_ico{height: 20px;width: 20px;float: left;border-right:1px solid #EEF4F4;background: center center no-repeat;}
+.zwork-contextmenu .contextmenu_center .contextmenu_center .contextmenu_item .contextmenu_label{height: 20px;line-height: 20px;width: 10px;float: left;text-indent: 5px;overflow: hidden;white-space:nowrap;}
+.zwork-contextmenu .contextmenu_center .contextmenu_center .contextmenu_item .contextmenu_more{height: 20px;width: 20px;float: left;background: url("image/contextmenu/more.gif") center center no-repeat;}
+.zwork-contextmenu .contextmenu_center .contextmenu_center .contextmenu_item_hover{background: url("image/contextmenu/bg_item.png") 0px -20px;}
+
+.zwork-contextmenu .contextmenu_center .contextmenu_center .contextmenu_mark{height: 1px;overflow: hidden;}
+.zwork-contextmenu .contextmenu_center .contextmenu_center .contextmenu_mark .contextmenu_ico{height: 1px;width: 20px;float: left;}
+.zwork-contextmenu .contextmenu_center .contextmenu_center .contextmenu_mark .contextmenu_label{height: 1px;width: 157px;background: #EEF4F4;float: left;overflow: hidden;}
+.zwork-contextmenu .contextmenu_center .contextmenu_center .contextmenu_mark .contextmenu_more{height: 1px;width: 20px;background: #EEF4F4;float: left;}
+
+.zwork-contextmenu .contextmenu_center .contextmenu_right{height: 298px;width:1px;background: #B8D0D6;float: left;}
+
+.zwork-contextmenu .contextmenu_bottom{height: 1px;background: #B8D0D6;overflow: hidden;}
+.zwork-contextmenu .contextmenu_bottom .contextmenu_left{height: 1px;width:1px;float: left;}
+.zwork-contextmenu .contextmenu_bottom .contextmenu_center{height: 1px;width: 198px;float: left;}
+.zwork-contextmenu .contextmenu_bottom .contextmenu_right{height: 1px;width:1px;float: left;}
+
+
+/** datagrid样式 **/
+.zwork-datagrid{width: 400px;height: 300px;margin-right: 0px;}
+.zwork-datagrid .datagrid_toolbar{height: 28px;line-height: 28px;background: url("image/datagrid/bg.gif");overflow: hidden;border-top: 1px solid #B4D1D3 ;border-bottom: 1px solid #B4D1D3;}
+.zwork-datagrid .datagrid_content{height: 250px;overflow: auto;position: relative;border-bottom: 1px solid #B4D1D3;}
+.zwork-datagrid .datagrid_content{background: white;}
+.zwork-datagrid .datagrid_content .datagrid_menu_ico{background: url("image/datagrid/content/ico.png");display: none;}
+.zwork-datagrid .datagrid_content .datagrid_headbg{position: absolute;z-index: 0;height: 22px;background: url("image/datagrid/content/bg.png") center center;width: 100%;top:0px;left:0px;}
+.zwork-datagrid .datagrid_content table{position: absolute;z-index: 2;}
+.zwork-datagrid .datagrid_content table td{margin: 0;padding: 0;border: 0;}
+.zwork-datagrid .datagrid_content table tr{margin: 0;padding: 0;border: 0;}
+.zwork-datagrid .datagrid_content table th{margin: 0;padding: 0;border: 0;}
+.zwork-datagrid .datagrid_content table thead tr{height: 22px;background: url("image/datagrid/content/bg.png");cursor: pointer;}
+.zwork-datagrid .datagrid_content table thead tr th{border-bottom: 1px solid #B4D1D3;border-right: 1px solid #B4D1D3;border-left: 1px solid #ffffff;border-top: 1px solid #ffffff;}
+.zwork-datagrid .datagrid_content table thead tr .checkbox{background: url("image/datagrid/content/cb.gif") center center no-repeat;cursor: pointer;}
+.zwork-datagrid .datagrid_content table thead .selected .checkbox{background: url("image/datagrid/content/cb_ck.gif") center center no-repeat;}
+.zwork-datagrid .datagrid_content table thead tr .toggle{background: url("image/datagrid/content/sh.gif") center center no-repeat;}
+.zwork-datagrid .datagrid_content table thead .noallselected .checkbox{background: url("image/datagrid/content/cb_na.gif") center center no-repeat;}
+.zwork-datagrid .datagrid_content table tbody tr{height: 22px;}
+.zwork-datagrid .datagrid_content table tbody tr td{border-bottom: 1px solid #B4D1D3;border-right: 1px solid #B4D1D3;border-left: 1px solid #ffffff;border-top: 1px solid #ffffff;}
+.zwork-datagrid .datagrid_content table tbody tr .checkbox{background: url("image/datagrid/content/cb.gif") center center no-repeat;cursor: pointer;}
+.zwork-datagrid .datagrid_content table tbody .selected .checkbox{background: url("image/datagrid/content/cb_ck.gif") center center no-repeat;}
+.zwork-datagrid .datagrid_content table tbody .odd{background:#FFFFFF;}
+.zwork-datagrid .datagrid_content table tbody .even{background:#f9fcfd;}
+.zwork-datagrid .datagrid_content table tbody .hover{background:#EEF4F4;}
+.zwork-datagrid .datagrid_content table tbody .selected{background:#EEF4F4;}
+
+
+/** desktop样式 **/
+.zwork-desktop{position: absolute;z-index: 1;}
+
+
+/** dock样式 **/
+.zwork-dock{position: absolute;z-index: 100;top: 200px;left: 100px;width: 320px;height: 60px;}
+.zwork-dock .dock_left{height: 60px;width: 34px;float: left;background: url("image/dock/l.png") center bottom repeat-x;}
+.zwork-dock .dock_center{height: 60px;width:252px;float: left;background: url("image/dock/c.png") center bottom repeat-x;}
+.zwork-dock .dock_center .item{width: 40px;height: 40px;float: left;margin-top:15px;margin-bottom:5px;cursor: pointer;}
+.zwork-dock .dock_center .item img{width: 40px;height: 40px;}
+.zwork-dock .dock_center .item_p2{width: 45px;height: 45px;margin-top:10px;margin-bottom:5px;}
+.zwork-dock .dock_center .item_p2 img{width: 45px;height: 45px;}
+.zwork-dock .dock_center .item_p1{width: 50px;height: 50px;margin-top:5px;margin-bottom:5px;}
+.zwork-dock .dock_center .item_p1 img{width: 50px;height: 50px;}
+.zwork-dock .dock_center .item_c{width: 55px;height: 55px;margin-top:0px;margin-bottom:5px;}
+.zwork-dock .dock_center .item_c img{width: 55px;height: 55px;}
+.zwork-dock .dock_center .item_n1{width: 50px;height: 50px;margin-top:5px;margin-bottom:5px;}
+.zwork-dock .dock_center .item_n1 img{width: 50px;height: 50px;}
+.zwork-dock .dock_center .item_n2{width: 45px;height: 45px;margin-top:10px;margin-bottom:5px;}
+.zwork-dock .dock_center .item_n2 img{width: 45px;height: 45px;}
+.zwork-dock .dock_right{height: 60px;width: 34px;float: left;background: url("image/dock/r.png") center bottom repeat-x;}
+
+
+/** layout样式 **/
+.zwork-layout{overflow: hidden;position: relative;}
+
+.zwork-layout .layout_north{overflow: auto;position: relative;}
+.zwork-layout .layout_west{overflow: auto;float: left;position: relative;}
+.zwork-layout .layout_center{overflow: auto;float: left;position: relative;}
+.zwork-layout .layout_east{overflow: auto;float: left;position: relative;}
+.zwork-layout .layout_south{overflow: auto;clear: left;position: relative;}
+
+.zwork-layout .layout_shade{position: absolute;top:0px;left:0px;width: 100%;height: 100%;z-index: 4;clear: left;display: none;}
+.zwork-layout .layout_border_north{height: 6px;width:100%;position: absolute;cursor: n-resize;overflow: hidden;z-index: 5;}
+.zwork-layout .layout_border_north .layout_button{width: 120px;height:6px;margin: 0 auto;}
+.zwork-layout .layout_border_north .layout_button div{width: 40px;height: 6px;float: left;cursor: pointer;}
+.zwork-layout .layout_border_north .layout_button div.layout_min{background: url("image/layout/button/x/min.gif");}
+.zwork-layout .layout_border_north .layout_button div.layout_max{background: url("image/layout/button/x/max.gif");}
+.zwork-layout .layout_border_north .layout_button div.layout_close{background: url("image/layout/button/x/in.gif");}
+.zwork-layout .layout_border_north .layout_button div.layout_open{background: url("image/layout/button/x/out.gif");}
+.zwork-layout .layout_border_north .layout_button div.layout_re{background: url("image/layout/button/x/re.gif");}
+
+.zwork-layout .layout_border_west{height:6px;width: 6px;position: absolute;cursor: w-resize;overflow: hidden;z-index: 5;}
+.zwork-layout .layout_border_west .layout_button{height: 120px;width:6px;position: absolute;left: 50%;top: 50%;margin-left: -3px;margin-top: -60px;}
+.zwork-layout .layout_border_west .layout_button div{height: 40px;width: 6px;cursor: pointer;}
+.zwork-layout .layout_border_west .layout_button div.layout_min{background: url("image/layout/button/y/min.gif");}
+.zwork-layout .layout_border_west .layout_button div.layout_max{background: url("image/layout/button/y/max.gif");}
+.zwork-layout .layout_border_west .layout_button div.layout_close{background: url("image/layout/button/y/in.gif");}
+.zwork-layout .layout_border_west .layout_button div.layout_open{background: url("image/layout/button/y/out.gif");}
+.zwork-layout .layout_border_west .layout_button div.layout_re{background: url("image/layout/button/y/re.gif");}
+
+.zwork-layout .layout_border_east{height:6px;width: 6px;position: absolute;cursor: e-resize;overflow: hidden;z-index: 5;}
+.zwork-layout .layout_border_east .layout_button{height: 120px;width:6px;position: absolute;left: 50%;top: 50%;margin-left: -3px;margin-top: -60px;}
+.zwork-layout .layout_border_east .layout_button div{height: 40px;width: 6px;cursor: pointer;}
+.zwork-layout .layout_border_east .layout_button div.layout_min{background: url("image/layout/button/y/min.gif");}
+.zwork-layout .layout_border_east .layout_button div.layout_max{background: url("image/layout/button/y/max.gif");}
+.zwork-layout .layout_border_east .layout_button div.layout_close{background: url("image/layout/button/y/in.gif");}
+.zwork-layout .layout_border_east .layout_button div.layout_open{background: url("image/layout/button/y/out.gif");}
+.zwork-layout .layout_border_east .layout_button div.layout_re{background: url("image/layout/button/y/re.gif");}
+
+.zwork-layout .layout_border_south{height: 6px;width:100%;position: absolute;cursor: s-resize;overflow: hidden;z-index: 5;}
+.zwork-layout .layout_border_south .layout_button{width: 120px;height:6px;margin: 0 auto;}
+.zwork-layout .layout_border_south .layout_button div{width: 40px;height: 6px;float: left;cursor: pointer;}
+.zwork-layout .layout_border_south .layout_button div.layout_min{background: url("image/layout/button/x/min.gif");}
+.zwork-layout .layout_border_south .layout_button div.layout_max{background: url("image/layout/button/x/max.gif");}
+.zwork-layout .layout_border_south .layout_button div.layout_close{background: url("image/layout/button/x/out.gif");}
+.zwork-layout .layout_border_south .layout_button div.layout_open{background: url("image/layout/button/x/in.gif");}
+.zwork-layout .layout_border_south .layout_button div.layout_re{background: url("image/layout/button/x/re.gif");}
+
+.zwork-layout .layout_border_north_copy{height: 6px;width:100%;overflow: hidden;background: url("image/layout/bg/x.gif");}
+.zwork-layout .layout_border_west_copy{height: 6px;width: 6px;float: left;overflow: hidden;background: url("image/layout/bg/y.gif");}
+.zwork-layout .layout_border_east_copy{height: 6px;width: 6px;float: left;overflow: hidden;background: url("image/layout/bg/y.gif");}
+.zwork-layout .layout_border_south_copy{height: 6px;width:100%;clear: left;overflow: hidden;background: url("image/layout/bg/x.gif");}
+
+
+/** link样式 **/
+.zwork-link{width: 60px;height: 60px;position: absolute;cursor: pointer;text-decoration: none;color: black;}
+.zwork-link_hover{background: url("image/link/hover.png");}
+.zwork-link .link_ico{width: 60px;height: 40px;}
+.zwork-link .link_ico img{width: 32px;height: 32px;margin-left:14px;margin-top:4px;}
+.zwork-link .link_label{height: 20px;line-height:20px;list-style: 20px;text-align: center;overflow: hidden;}
+
+/** pagination样式 **/
+.zwork-pagination{height: 30px;background: url("image/pagination/bg.png");}
+.zwork-pagination ul{list-style: none;float: right;margin-right: 10px;margin-top: 3px;}
+.zwork-pagination ul li{float: left;height: 23px;line-height: 23px;margin-left: 5px;cursor: pointer;}
+.zwork-pagination ul li.hover{background: url("image/pagination/button.png") 0px -100px;}
+.zwork-pagination ul li div{height: 23px;line-height: 23px;margin-left: 5px;padding-right: 5px;}
+.zwork-pagination ul li.hover div{background: url("image/pagination/button.png") right -150px;}
+.zwork-pagination ul li div span{display:block;background: none;height: 23px;width: 6px;margin-right:2px;background-position: center center;background-repeat: no-repeat;}
+.zwork-pagination ul li div.page_first span{background-image: url("image/pagination/button/f.gif");float:left;}
+.zwork-pagination ul li div.page_prev span{background-image: url("image/pagination/button/p.gif");float:left;}
+.zwork-pagination ul li div.page_next span{background-image: url("image/pagination/button/n.gif");margin-left:2px;float:right;}
+.zwork-pagination ul li div.page_last span{background-image: url("image/pagination/button/l.gif");margin-left:2px;float:right;}
+.zwork-pagination ul li.disable div{color: gray;}
+.zwork-pagination ul li.disable div.page_first span{background-image: url("image/pagination/button/f_d.gif");float:left;}
+.zwork-pagination ul li.disable div.page_prev span{background-image: url("image/pagination/button/p_d.gif");float:left;}
+.zwork-pagination ul li.disable div.page_next span{background-image: url("image/pagination/button/n_d.gif");margin-left:2px;float:right;}
+.zwork-pagination ul li.disable div.page_last span{background-image: url("image/pagination/button/l_d.gif");margin-left:2px;float:right;}
+.zwork-pagination ul li.current div{color: red;font-weight: bold;}
+
+
+/** panel样式 **/
+.zwork-panel{width: 200px;height: 200px;margin: 2px;}
+
+.zwork-panel .panel_top{height: 21px;position: relative;overflow: hidden;}
+.zwork-panel .panel_top .panel_border{position: absolute;z-index: 1;height: 21px;width:200px;}
+.zwork-panel .panel_top .panel_border .panel_left{height: 21px;width: 5px;float: left;background: url("image/panel/border/wn.gif");}
+.zwork-panel .panel_top .panel_border .panel_center{height: 21px;width: 183px;float: left;background: url("image/panel/border/n.gif");}
+.zwork-panel .panel_top .panel_border .panel_right{height: 21px;width: 12px;float: left;background: url("image/panel/border/en.gif");}
+
+.zwork-panel .panel_top .panel_titlebar{position: absolute;z-index: 2;height:21px;clear: both;width:200px;}
+.zwork-panel .panel_top .panel_titlebar .panel_title{float: left;height: 21px;width:100px;margin-left: 6px;}
+.zwork-panel .panel_top .panel_titlebar .panel_title .panel_left{width:10px;height: 21px;float: left;background: url("image/panel/title/l.gif");}
+.zwork-panel .panel_top .panel_titlebar .panel_title .panel_content{width:80px;height: 21px;float: left;background: url("image/panel/title/c.gif");line-height: 21px;white-space:nowrap;overflow: auto;}
+.zwork-panel .panel_top .panel_titlebar .panel_title .panel_right{width:10px;height: 21px;float: left;background: url("image/panel/title/r.gif");}
+.zwork-panel .panel_top .panel_titlebar .panel_button{float: right;width: 15px;height: 15px;margin-top: 3px;margin-right: 1px;cursor: pointer;}
+.zwork-panel .panel_top .panel_titlebar .up{background: url("image/panel/button/up.gif");}
+.zwork-panel .panel_top .panel_titlebar .down{background: url("image/panel/button/down.gif");}
+
+.zwork-panel .panel_center{height: 174px;overflow: hidden;}
+.zwork-panel .panel_center .panel_left{height: 174px;width: 5px;float: left;background: url("image/panel/border/w.gif");}
+.zwork-panel .panel_center .panel_content{height: 174px;width: 183px;float: left;overflow: auto;}
+.zwork-panel .panel_center .panel_right{height: 174px;width: 12px;float: left;background: url("image/panel/border/e.gif");}
+
+.zwork-panel .panel_bottom{height: 5px;overflow: hidden;}
+.zwork-panel .panel_bottom .panel_left{height: 5px;width: 5px;float: left;background: url("image/panel/border/ws.gif");}
+.zwork-panel .panel_bottom .panel_center{height: 5px;width: 183px;float: left;background: url("image/panel/border/s.gif");}
+.zwork-panel .panel_bottom .panel_right{height: 5px;width: 12px;float: left;background: url("image/panel/border/es.gif");}
+
+
+/** progressbar样式 **/
+.zwork-progressbar{width: 200px;height: 10px;background: url("image/progressbar/bg.png") center center;border: 1px solid #B4D1D3;text-align: left;}
+.zwork-progressbar .progressbar_value{width: 60px;height: 10px;background: url("image/progressbar/value.png") center center;}
+
+
+/** tab样式 **/
+.zwork-tab{width: 500px;height: 300px;}
+
+.zwork-tab .tab_top{height: 28px;overflow: hidden;}
+.zwork-tab .tab_top .tab_border{position: absolute;height: 28px;z-index: 1;}
+.zwork-tab .tab_top .tab_border .tab_left{height: 28px;width:5px;background: url("image/tab/bg.png") 0px 0px;float:left;}
+.zwork-tab .tab_top .tab_border .tab_center{height: 28px;width:490px;background: url("image/tab/bg.png") 0px -100px;float:left;}
+.zwork-tab .tab_top .tab_border .tab_right{height: 28px;width:5px;background: url("image/tab/bg.png") 0px -50px;float:left;}
+
+.zwork-tab .tab_top .tab_navi{height: 28px;position: absolute;z-index: 2;}
+.zwork-tab .tab_top .tab_navi .tab_titles{height: 28px;width: 449px;float: left;overflow: hidden;position: relative;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_float{height: 28px;width: 100000px;position: absolute;z-index: 0;}
+
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title{height: 28px;width: 110px;float: left;margin-left: 2px;margin-right: 2px;cursor: pointer;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title .tab_left{height: 28px;width:5px;float: left;background: url("image/tab/bg.png") 0px -150px;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title .tab_content{height: 28px;float: left;background: url("image/tab/bg.png") 0px -250px;line-height: 28px;white-space:nowrap;overflow: auto;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title .tab_button{height: 28px;width:16px;float: left;background: url("image/tab/bg.png") 0px -250px;overflow: hidden;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title .tab_button .tab_close{width: 11px;height: 11px;margin-top: 8px;margin-left: 5px;background: url("image/tab/button.png") 0px 0px;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title .tab_button .tab_close_hover{background: url("image/tab/button.png") 0px -50px;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title .tab_right{height: 28px;width:5px;float: left;background: url("image/tab/bg.png") 0px -200px;}
+
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title_hover .tab_left{background: url("image/tab/bg.png") 0px -300px;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title_hover .tab_content{background: url("image/tab/bg.png") 0px -400px;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title_hover .tab_button{background: url("image/tab/bg.png") 0px -400px;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title_hover .tab_right{background: url("image/tab/bg.png") 0px -350px;}
+
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title_selected .tab_left{background: url("image/tab/bg.png") 0px -450px;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title_selected .tab_content{background: url("image/tab/bg.png") 0px -550px;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title_selected .tab_button{background: url("image/tab/bg.png") 0px -550px;}
+.zwork-tab .tab_top .tab_navi .tab_titles .tab_title_selected .tab_right{background: url("image/tab/bg.png") 0px -500px;}
+
+.zwork-tab .tab_top .tab_navi .tab_list{height: 23px;width: 17px;margin-top:2px;float: left;background:url("image/tab/control.png");cursor: pointer;}
+
+.zwork-tab .tab_center {width: 500px;height: 267px;overflow: hidden;}
+.zwork-tab .tab_center .tab_left{width: 1px;height:267px;background: #B4D1D3;float:left;overflow: hidden;}
+.zwork-tab .tab_center .tab_content{width: 498px;height:267px;float:left;background: url("image/tab/content.png");}
+.zwork-tab .tab_center .tab_content .tab_page{position: relative;}
+.zwork-tab .tab_center .tab_right{width: 1px;height:267px;background: #B4D1D3;float:left;overflow: hidden;}
+
+.zwork-tab .tab_bottom {width: 500px;height: 1px;overflow: hidden;background: #B4D1D3; }
+.zwork-tab .tab_bottom .tab_left{width: 5px;height:1px;float:left;overflow: hidden;}
+.zwork-tab .tab_bottom .tab_center{width: 490px;height:1px;float:left;overflow: hidden;background: #B4D1D3; }
+.zwork-tab .tab_bottom .tab_right{width: 5px;height:1px;float:left;overflow: hidden;}
+
+
+/** taskbar样式 **/
+.zwork-taskbar{position: absolute;height: 29px;width: 800;left:0px;z-index: 100000;overflow: hidden;top:100px;clear: left;background: url("image/taskbar/bg.png") repeat-x center top;}
+
+.zwork-taskbar .startButton{overflow:hidden;width: 75px;height: 29px;line-height: 29px;float: left;background:url("image/taskbar/start.png") 0px 0px no-repeat;cursor: pointer;position: relative;}
+.zwork-taskbar .startButton_mo{background:url("image/taskbar/start.png") 0px -29px;}
+.zwork-taskbar .startButton_select{background:url("image/taskbar/start.png") 0px -58px;}
+.zwork-taskbar .quick{width: 0px;height: 29px;line-height: 29px;float: left;position: relative;overflow:hidden;}
+
+.zwork-taskbar .task{width: 700px;height: 29px;line-height: 29px;float: left;position: relative;overflow:hidden;}
+.zwork-taskbar .task .items{width: 680px;height: 29px;line-height: 29px;float: left;position: relative;overflow:hidden;}
+.zwork-taskbar .task .items .float{position: absolute;top: 0px;left: 0px;height: 29px;width: 100000px;z-index: 0;}
+.zwork-taskbar .task .items .item{margin-left:2px;margin-right:2px;width: 150px;height: 29px;line-height: 29px;background: url("image/taskbar/taskitem.png");float: left;text-align: center;cursor: pointer;}
+.zwork-taskbar .task .items .item_hover{background: url("image/taskbar/taskitem.png") 0px -29px;}
+.zwork-taskbar .task .items .item_selected{background: url("image/taskbar/taskitem.png") 0px -58px;}
+.zwork-taskbar .task .more{width: 22px;height: 29px;line-height: 29px;float: left;position: relative;}
+.zwork-taskbar .task .more{background: url("image/taskbar/more.png") 0 0 no-repeat; cursor: pointer;}
+.zwork-taskbar .task .more_hover{background: url("image/taskbar/more.png") 0 -29px no-repeat;}
+
+.zwork-taskbar .tray{width: 0px;height: 29px;line-height: 29px;float: left;position: relative;overflow:hidden;}
+
+.zwork-taskbar_startMenu{position: absolute;z-index: 100001;width: 300px;height: 300px;left:0px;display: none;overflow: hidden;}
+.zwork-taskbar_startMenu .startMenu_left{width: 6px;height: 300px;float: left;background: url("image/taskbar/startMenu/left.png");overflow: hidden;}
+
+.zwork-taskbar_startMenu .startMenu_center{width: 288px;height: 300px;float: left;overflow: hidden;overflow: hidden;}
+.zwork-taskbar_startMenu .startMenu_center .startMenu_top{width: 288px;height: 6px;background: url("image/taskbar/startMenu/top-bottom.png") repeat-x;clear: left;overflow: hidden;}
+.zwork-taskbar_startMenu .startMenu_center .startMenu_center{width: 288px;height: 288px;background: url("image/taskbar/startMenu/center.png");clear: left;overflow: hidden;}
+.zwork-taskbar_startMenu .startMenu_center .startMenu_center .startMenu_list{width: 178px;height: 280px;float: left;background: white;margin: 4px;overflow: auto;}
+.zwork-taskbar_startMenu .startMenu_center .menu{height: 22px;line-height: 22px;text-indent: 10px;overflow: hidden;border: 1px solid white;cursor: pointer;}
+.zwork-taskbar_startMenu .startMenu_center .menu_hover{background: url("image/taskbar/startMenu/menu_hover.gif");border: 1px solid #B4D1D3;}
+.zwork-taskbar_startMenu .startMenu_center .button{height: 22px;line-height: 22px;text-indent: 5px;overflow: hidden;border: 1px solid #43484B;cursor: pointer;color: white;margin-bottom: 1px;}
+.zwork-taskbar_startMenu .startMenu_center .button_hover{background: url("image/taskbar/startMenu/button.png");border: 1px solid #cccccc;}
+
+.zwork-taskbar_startMenu .startMenu_center .startMenu_control{width: 90px;height: 280px;float: left;margin: 4px;}
+.zwork-taskbar_startMenu .startMenu_center .startMenu_control a{color: white;height: 22px;width: 100%;}
+.zwork-taskbar_startMenu .startMenu_center .startMenu_bottom{width: 288px;height: 6px;background: url("image/taskbar/startMenu/top-bottom.png") center bottom repeat-x;clear: left;overflow: hidden;}
+.zwork-taskbar_startMenu .startMenu_right{width: 6px;height: 300px;float: left;background: url("image/taskbar/startMenu/right.png");overflow: hidden;}
+
+
+
+.zwork-skin{position: absolute;top: -1000px;width: 10001px;}

@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/java/com/szl/common/utils/Escape.java=gb2312
+encoding//src/main/java/com/szl/web/checkcode/VerifImage.java=UTF-8
+encoding//src/main/java/com/szl/web/servlet/HttpConnectionManager.java=UTF-8
+encoding//src/main/webapp/index.jsp=UTF-8
+encoding//src/main/webapp/js/FlexPaper_2.2.4/flexpaper.js=UTF-8
+encoding//src/main/webapp/page/checkcode2/userLogin.jsp=UTF-8
+encoding//src/main/webapp/page/hello.jsp=UTF-8
+encoding//src/main/webapp/page/viewPdf/viewFileWithSwt.jsp=UTF-8
+encoding//src/test/java=UTF-8
+encoding/<project>=UTF-8

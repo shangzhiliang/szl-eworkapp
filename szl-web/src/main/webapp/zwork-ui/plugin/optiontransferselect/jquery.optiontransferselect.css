@@ -1,0 +1,6 @@
+.zwork-optiontransferselect{margin-right:auto;margin-left:auto;margin-top:20px;}
+.zwork-optiontransferselect .title{font-weight:bold;}
+.zwork-optiontransferselect select{width:100%;}
+.zwork-optiontransferselect .list{margin-right:15px;float:left;width:200px;}
+.zwork-optiontransferselect .selected{float:left;width:200px;}
+.zwork-optiontransferselect .hiddenFileds{display:none;}

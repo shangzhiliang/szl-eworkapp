@@ -1,0 +1,240 @@
+/* 首页样式 */
+.header{height: 60px;background:#34495E;border-top: 1px transparent solid;}
+.header .logo{width:275px;height: 46px;float: left;background: url("image/guandu.png") no-repeat;}
+.header .navi{float: right;margin-right: 30px;}
+.header .navi{float: right;margin-right: 30px;} ul {list-style: none;}
+.header .navi li {
+	width: 80px;
+	height: 55px;
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	position: relative;
+	margin: 5px 5px 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.header .navi li a{
+	color: #FFFFFF;
+	display: inline-block;
+	width: 80px;
+	height: 55px;
+	padding-top: 31px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding-top: 30px;
+	margin-top: -30px;
+	text-decoration: none;
+	position: relative;
+	z-index: 99; 
+}
+.styleChange:before{
+	width: 30px;
+	height: 30px;
+	content: '';
+	display: block;
+	margin: 0 auto;
+	background: url(image/style_change.png) no-repeat;
+	background-size: 30px 30px;
+
+}
+.logout:before {
+	width: 30px;
+	height: 30px;
+	content: '';
+	display: block;
+	margin: 0 auto;
+	background: url(image/logout.png) no-repeat;
+	background-size: 30px 30px;
+}
+.sysMessage:before {
+	width: 30px;
+	height: 30px;
+	content: '';
+	display: block;
+	margin: 0 auto;
+	background: url(image/bell.png) no-repeat;
+	background-size: 30px 30px;
+	-webkit-box-shadow: inset 0 -1px 0 #3333sf;
+	-webkit-transition: 0.4s;
+	-webkit-transition: -webkit-transform 0.4s ease-out;
+	-moz-transition: -moz-transform 0.4s ease-out;
+	transition: transform 0.4s ease-out;
+}
+.sysMessage:hover:before {
+	/*box-shadow: 0 0 10px #fff;
+	rgba(255, 255, 255, .6),
+	inset 0 0 20px rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0 0 10px #fff;
+	rgba(255, 255, 255, .6),*/
+	inset 0 0 20px rgba(255, 255, 255, 1);
+	/*图像旋转360度*/
+	transform: rotate(360deg) scale(1.5);
+	-webkit-transform: rotate(360deg) scale(1.5);
+	-moz-transform: rotate(360deg) scale(1.5);
+}
+.sysMessage span {
+	color: #FFFFFF;
+	display: block;
+	margin: 0 auto;
+	width: 20px;
+	height: 20px;
+	background: #FF0000;
+	border-radius: 100%;
+	text-align: center;
+	position: absolute;
+	right: 11px;
+	top: -5px;
+	z-index: 99;
+}
+.sysMessage.on:before {
+	/*实现阴影效果*/
+	/*box-shadow: 0 0 10px #fff;
+	rgba(255, 255, 255, .6),
+	inset 0 0 20px rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0 0 10px #fff;
+	rgba(255, 255, 255, .6),*/
+	inset 0 0 20px rgba(255, 255, 255, 1);
+	/*图像旋转360度*/
+	transform: rotate(360deg) scale(1.5) translate(50%, 50%);
+	-webkit-transform: rotate(360deg) scale(1.5) translate(50%, 50%);
+	-moz-transform: rotate(360deg) scale(1.5) translate(50%, 50%);
+}
+.container{height: 710px;position: relative;overflow: hidden;}
+.container .menubar{height: 700px;width: 28px;position: absolute;left:-30px;top:5px;border: 1px solid #B4D1D3;background: #EFF4F7;cursor: pointer;z-index: 3;}
+.container .menubar_hover{background: #F5F9FA;}
+.container .menubar .button{height: 20px;width: 18px;background: url("image/menu.png") center -150px no-repeat;float: right;margin: 4px;cursor: pointer;}
+.container .menubar .button_hover{background: url("image/menu.png") center -200px no-repeat;}
+.container .menu{height: 700px;width: 200px;position: absolute;top:5px;left: 5px;border: 1px solid #B4D1D3;z-index: 2;overflow: hidden;}
+.container .menu .title{height: 26px;position: relative;background: url("image/menu.png") repeat-x;line-height: 26px;font-weight: bold;text-indent: 10px;border-bottom: 1px solid #B4D1D3;}
+.container .menu .title .button{height: 20px;width: 18px;background: url("image/menu.png") center -50px no-repeat;cursor: pointer;position: absolute;left: 100%;top:3px;margin-left: -24px;}
+.container .menu .title .button_hover{background: url("image/menu.png") center -100px no-repeat;}
+.container .menu .content{height: 670px;position: relative;overflow: hidden;}
+.container .main{left: 230px;height: 700px;width: 2000px;position: absolute;top:5px;z-index: 1;overflow: hidden;}
+.footer{height: 30px;line-height: 30px;background:#EEF4F4;text-align: center;}
+input, textarea, select{margin:0;padding:2px;line-height:15px;font-size:12px;border-style:solid; border-width:1px;border-color:#a2bac0 #b8d0d6 #b8d0d6 #a2bac0;}
+input.readonly, textarea.readonly{border-color:#9eabb3 #d5dbdf #d5dbdf #9eabb3;background-color:#F6F6F6;}
+input.disabled, textarea.disabled{border-color:#9eabb3 #d5dbdf #d5dbdf #9eabb3;background-color:#F6F6F6;}
+input.required, textarea.required{background:#fff url(image/form/required.gif) scroll no-repeat right;float:left;margin-right:5px;}
+select.required{padding:2px 5px;background:#fff url(image/form/required.gif) no-repeat scroll -1px -3px;float:left}
+input.required-date{background:#fff url(image/form/required-date.gif) no-repeat scroll right;float:left}
+input.date{background:#fff url(image/form/datePicker.gif) no-repeat scroll right;float:left}
+input.format{float:left}
+.datasearch input{float: none;}
+div.lastRow input{float: none;}
+
+/* 页面中的提示信息 */
+#system_msg{display:none;}
+
+/* 表单验证错误提示*/
+/*span.error{color:red;margin-left:5px;padding:4px 4px 4px 20px;background:url("image/form/invalid.gif") left center no-repeat;text-align:left;}*/
+span.error{color: red;/*padding-top: 25px;*/vertical-align: top; display: inline-block; margin-left: 5px;text-indent: 15px;background: url("image/form/invalid.gif") 0px 0px no-repeat;}
+input.error, textarea.error { border-color:#F80C11 #FB7E81 #FB7E81 #F80C11;margin-right:6px;}
+
+
+/* 工具栏，用于存放按钮 */
+.toolbar{background:#EEF4F5;border-top:1px solid #B4D1D3;}
+.toolbar .zwork-button{float:left;}
+.toolbar .buttons{display:table;margin:1px auto 0 auto;}
+.toolbar .searchbuttons{float:right}
+.zwork-datagrid .toolbar{border-top:0}
+/* 按钮居右边重新定义按钮样式 */
+.toolbar .newbuttons{float:right}
+
+
+/* 定义按钮样式 */
+.addButton{background: url("image/button/add.gif");}
+.editButton{background: url("image/button/edit.gif");}
+.deleteButton{background: url("image/button/delete.gif");}
+.viewButton{background: url("image/button/view.gif");}
+.saveButton{}
+.cancelButton{}
+.closeButton{}
+
+/* 定义jquery validate 验证通过后样式 */
+span.valid{
+	background: url("image/form/valid.gif") no-repeat scroll left center rgba(0, 0, 0, 0);
+    color: #32CD32;
+    margin-left: 5px;
+    padding: 4px 4px 4px 20px;
+    text-align: left;
+}
+
+/* 常见页面 */
+.page{}
+
+/*查询列表*/
+.page .search{background: #EEF4F5;border-bottom:1px solid #B4D1D3;}
+.page .search .layout_center{overflow:hidden;background: #eef4f5;}
+.page .search .searchContent{padding:10px;}
+.page .search .searchContent>div{float:left;margin:5px 32px 5px 0px;height:25px;width:38%;}
+.page .search .searchContent .zwork-button{float:right;margin:0px 130px 0px 0px;height:25px;overflow:hidden;}
+.page .search .searchContent div label{padding:0px 10px 0px 0px;line-height:22px;font-weight:bold;}
+.page .search .toolbar{border-top:0}
+.page .search .searchContent>div.searchcum{width: 24%;}
+.page .search .searchContent>div.searchsel{width: 20%;}
+.page .search .searchContent>div.searchdate{width: 38%;}
+.page .search .searchContent>div label{display: inline-block;padding: 0 10px 0 0;width: 80px;line-height: 22px;text-align: right;}
+.page .search .searchContent>div label[for=queryEntity_lastAccessTime]{width: 267px;}
+.page .search .searchContent>div input{float:none;}
+
+.page .content{background:white;height:100%;}
+
+/* 定义每行可以展示的div个数*/
+.page .content .row1{width: 96%;}
+.page .content .row2{width: 48%;}
+.page .content .row3{width: 32%;}
+.page .content .row4{width: 24%;}
+.page .content .lastRow{border-bottom:0!important;}
+.page .content .lastRow span{line-height:22px}
+
+/* 新增/修改 */
+.page .content .editTable div{float:left;height:25px;line-height: 22px;margin-top:5px;padding-bottom:5px;border-bottom:1px dashed #B4D1D3;}
+.page .content .editTable div label{float:left;width:120px;text-align:right;padding:0px 10px 0px 0px;line-height:22px;font-weight:bold;}
+.page .content .editTable div span{text-align:left;/*float:left;*/margin-top:4px;}
+.page .content .editTable div span#buttonSpan{text-align:left;float:left;width:85%;}
+.page .content .editTable div div span{text-align:left;float:none}
+.page .content .editTable div span label{float:none;}
+.page .content .editTable div span .zwork-button{float:right;height:23px;margin-top:-5px}
+.page .content .editTable div div{height:18px;margin-top:0px;border:none;}
+
+
+
+/*查看*/
+.page .content .viewTable{margin:10px;height:100%;}
+.page .content .viewTable div{float:left;height:25px;line-height:22px;margin-top:5px;padding-bottom:5px;border-bottom: 1px dashed #B4D1D3;}
+/* 借款用途，备注等文本区高度自适应,对齐设置 */
+.page .content .viewTable div.textheight{height:auto;line-height:22px;height:40px; word-wrap:break-word;}
+.page .content .viewTable div.textheight span{display:block;overflow:hidden;}
+.page .content .viewTable div label{float:left;width:120px;text-align:right;padding:0px 10px 0px 0px;line-height:22px;font-weight:bold;}
+label[for=entity1_mortgageSituation]{/*margin-left: -130px;*/}
+.page .content .viewTable div span{text-align:left;line-height:22px;margin-top:4px;}
+.page .content .viewTable div span label{float:none;}
+.page .content .viewTable div div.zwork-button{height:23px;margin-top:-6px;margin-left:15px;border:none;}
+
+
+/*任务分发表格*/
+.newtable{border-collapse:collapse;border-spacing:0;border-left:1px solid #b4d1d3;border-top:1px solid #b4d1d3;}
+.newtable th,td{border-right:1px solid #b4d1d3;border-bottom:1px solid #b4d1d3;padding:5px 15px;}
+.newtable th{font-weight:bold;background:#eef4f5;}
+
+/*评估报告表格*/
+.reporttable{float:left;}
+
+
+/*新添加的-乐少*/
+label[for=entity1_mortgageSituation] {width: auto;/*margin-left: -60px;*/}
+.viewTable label[for=entity1_mortgageSituation]{/*margin-left: -120px;*/}
+/*这两段涉及到view.jsp的style120px样式*/
+.page .content .editTable div span[for="entity_loanApplication"]{/*margin-left: 7px;padding-top: 25px;*/}
+/*.page .editTable div.row1 span{float:none!important;}*/
+
+/* 密码强度 */
+.password-strong{padding-left:100px;height: 25px;}
+.password-strong div{float: left;background: #d6d3d3;width: 47px;height: 20px;line-height: 24px;margin-top: 5px;margin-left: 3px;text-align: center;}
+.password-strong div.select-1{background: #FE0000;color: #fff;}
+.password-strong div.select-2{background: #FFE500;color: #fff;}
+.password-strong div.select-3{background: #1E90FF;color: #fff;}
+.password-strong div.select-4{background: #419E29;color: #fff;}

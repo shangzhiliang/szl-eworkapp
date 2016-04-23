@@ -1,0 +1,7 @@
+2015-12-03 19:42:58 [com.szl.web.servlet.FindBjQyxyInfoServlet.jsoupGetData(FindBjQyxyInfoServlet.java:131)] ERROR 
+java.lang.IllegalArgumentException: Cookie value must not be null
+	at org.jsoup.helper.Validate.notNull(Validate.java:26)
+	at org.jsoup.helper.HttpConnection$Base.cookie(HttpConnection.java:331)
+	at org.jsoup.helper.HttpConnection.cookie(HttpConnection.java:175)
+	at com.szl.web.servlet.FindBjQyxyInfoServlet.jsoupGetData(FindBjQyxyInfoServlet.java:113)
+	at com.szl.web.servlet.FindBjQyxyInfoServlet.main(FindBjQyxyInfoServlet.java:193)

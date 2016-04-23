@@ -1,0 +1,34 @@
+/* 通过filter使ie6中的png24透明 */
+
+.zwork-mask{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/mask.png");}
+
+/* window */
+.zwork-window_shadow .shadow_top .shadow_left{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/window/shadow/wn.png");}
+.zwork-window_shadow .shadow_top .shadow_center{background: url("image/window/shadow/n.png");background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/window/shadow/n.png");}
+.zwork-window_shadow .shadow_top .shadow_right{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/window/shadow/en.png");}
+.zwork-window_shadow .shadow_center .shadow_left{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/window/shadow/w.png");}
+.zwork-window_shadow .shadow_center .shadow_center{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/window/shadow/c.png");}
+.zwork-window_shadow .shadow_center .shadow_right{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/window/shadow/e.png");}
+.zwork-window_shadow .shadow_bottom .shadow_left{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/window/shadow/ws.png");}
+.zwork-window_shadow .shadow_bottom .shadow_center{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/window/shadow/s.png");}
+.zwork-window_shadow .shadow_bottom .shadow_right{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/window/shadow/es.png");}
+
+/* ajaxing */
+.zwork-ajaxing .ajaxing_left{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/ajaxing/bg/l.png");}
+.zwork-ajaxing .ajaxing_center{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/ajaxing/bg/c.png");}
+.zwork-ajaxing .ajaxing_right{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/ajaxing/bg/r.png");}
+
+/* messager */
+.zwork-messager .messager_content .confirm_ico{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src="zwork-ui/skin/dwz/image/messager/confirm.png");}
+.zwork-messager .messager_content .info_ico{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src="zwork-ui/skin/dwz/image/messager/info.png");}
+.zwork-messager .messager_content .error_ico{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src="zwork-ui/skin/dwz/image/messager/error.png");}
+.zwork-messager .messager_content .warn_ico{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src="zwork-ui/skin/dwz/image/messager/warn.png");}
+.zwork-messager .messager_content .success_ico{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, src="zwork-ui/skin/dwz/image/messager/success.png");}
+
+
+/* link */
+.zwork-link_hover{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/link/hover.png");}
+
+
+/* taskbar */
+.zwork-taskbar_startMenu .startMenu_center .button_hover{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="zwork-ui/skin/dwz/image/taskbar/startMenu/button.png");}
