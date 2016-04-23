@@ -1,0 +1,13 @@
+-Xverify:none ＃禁止掉字节码验证过程
+-Xmx512m  #最大堆大小，m
+-Xms512m  #最小初始堆大小 
+-Xmn128m  #新生代初始大小
+-XX:PermSize=96m   永久代初始大小
+-XX:MaxPermSize=96m 永久代最大内存
+-XX:+DisableExplicitGC
+-Xnoclassgc
+-XX:+UseParNewGC
+-XX:+UseConcMarkSweepGC
+-XX:CMSInitiatingOccupancyFraction=85
+
+以上是在eclipse.ini 配置文件中增加的参数配置，可以很大程度提高eclipse运行速度
