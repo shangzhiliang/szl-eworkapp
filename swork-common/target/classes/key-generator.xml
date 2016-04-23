@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+    <!-- 序列键数据上下文-->
+    <bean id="keyGeneratorContext" class="org.swork.common.key.KeyGeneratorContext"/>
+     
+	<!-- 主键生成器配置 -->
+	<bean id="keyGeneratorContainer" class="org.swork.common.key.KeyGeneratorContainer">
+		<!-- 数据源配置 -->
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+        </property>
+        
+		<!-- 序列键数据上下文 -->
+		<property name="context">
+			<map>
+				<entry key="keyGeneratorContext">
+					<ref bean="keyGeneratorContext"/>
+				</entry>
+			</map>
+		</property>
+		
+		<!-- 定义序列键生成器 -->
+		<property name="keyGeneratorConfigs">
+			<map>
+				<!-- key值为序列键标识 -->
+				<entry key="pmParamId">
+					<bean class="org.swork.common.key.config.ConditionKeyGeneratorConfig">
+						<!-- 序列键顺序号控制表，可选属性，默认为pm_key_generator-->	
+						<property name="tableName" value="pm_key_generator" />
+						<!-- 缓冲池大小，可选属性，默认为1-->	
+						<property name="poolSize" value="1" />
+						<!-- 条件，必选属性，只有条件值相等情况下顺序号才递增,支持freemarker语法，可访问序列键数据上下文 -->
+						<!-- 示例：按照YYYYMM条件生成顺序号 -->
+						<property name="condition" value='${keyGeneratorContext.currentDate?replace("-", "")?substring(0,6)}' />
+						<!-- 主键格式，可选属性，默认全部由顺序号组成，%s表示顺序号，支持freemarker语法,可访问序列键数据上下文 -->
+						<!-- 示例：序列键格式：YYYYMM+5位顺序号 -->
+						<property name="keyPattern" value='${keyGeneratorContext.currentDate?replace("-", "")?substring(0,6)}%s' />
+						<!-- 顺序号长度,不足时自动左补零-->
+						<property name="length" value="5" />
+						<!-- 顺序号最小长度,不足时自动左补零，如果已设置length，则无效-->
+						<property name="minLength" value="1" />
+						<!-- 顺序号最大长度,如果已设置length，则无效-->
+						<property name="maxLength" value="5" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

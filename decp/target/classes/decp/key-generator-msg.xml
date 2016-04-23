@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 主键生成器配置 -->
+	<bean id="decpKeyGeneratorContainerMsg" class="org.zwork.common.key.KeyGeneratorContainer">
+		<!-- 数据源配置 -->
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+        </property>
+		<!-- 序列键数据上下文 -->
+		<property name="context">
+			<map>
+				<entry key="keyGeneratorContext">
+					<ref bean="decpKeyGeneratorContext"/>
+				</entry>
+			</map>
+		</property>
+		
+		<!-- 定义序列键生成器 -->
+		<property name="keyGeneratorConfigs">
+			<map>				
+				<entry key="msgExchangePackageId">
+					<bean class="org.zwork.common.key.config.ConditionKeyGeneratorConfig">
+						<property name="condition" value='msg_exchange_package:id' />
+						<!-- 默认为20位顺序号 -->
+						<property name="keyPattern" value='%s' />
+						<property name="length" value="20" />
+					</bean>
+				</entry>
+				<entry key="msgTransferInfoId">
+					<bean class="org.zwork.common.key.config.ConditionKeyGeneratorConfig">
+						<property name="condition" value='msg_transfer_Info:id' />
+						<!-- 默认为20位顺序号 -->
+						<property name="keyPattern" value='%s' />
+						<property name="length" value="20" />
+					</bean>
+				</entry>
+				
+				<entry key="messageID">
+					<bean class="org.zwork.common.key.config.ConditionKeyGeneratorConfig">
+						<property name="condition" value='${keyGeneratorContext.currentDate?replace("-", "")?substring(0,8)}' />
+						<!-- 默认为20位顺序号 -->
+						<property name="keyPattern" value='${keyGeneratorContext.currentDate?replace("-", "")?substring(0,8)}%s' />
+						<property name="length" value="8" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

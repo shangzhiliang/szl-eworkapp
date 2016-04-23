@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	 xmlns:jaxws="http://cxf.apache.org/jaxws"    
+	 xsi:schemaLocation="
+		http://www.springframework.org/schema/beans    
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+        http://cxf.apache.org/jaxws    
+        http://cxf.apache.org/schemas/jaxws.xsd
+        http://cxf.apache.org/transports/http/configuration
+        http://cxf.apache.org/schemas/configuration/http-conf.xsd">
+	
+	<!-- 集成CXF，如果项目中已集成CXF，则可将此段注释 -->
+<!-- 	<import resource="classpath:META-INF/cxf/cxf.xml" /> -->
+<!-- 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" /> -->
+	<!-- 数据交换平台-公用消息属性配置 -->
+	<bean id="decpCommonMsgCfg" class="com.org.decp.msg.config.CommonMessageConfig" scope="singleton">
+		<!-- 交换源发送方，由数据交换平台分配 -->
+		<property name="sourceID" value="YKZC" />
+		<!-- 交换最终接收方，由数据交换平台分配 -->
+		<property name="destinationID" value="YKZC" />
+		<!-- 交换源发送方系统标识，由数据交换平台分配 -->
+		<property name="sourceAppID" value="CRMSWX" />
+		<!-- 最终接收方系统标识，由数据交换平台分配 -->
+		<property name="destinationAppID" value="CRMSFM" />
+		<!-- 同步标识: 0:异步 1:同步-->
+		<property name="syncFlag" value="1" />
+		<!-- 交易配置 -->
+		<property name="tradeMsgCfgMap">
+	        <map>
+	        	<!-- 测试交易 -->
+	        	<entry key="Test01" value-ref="tradeMessageConfigTest01"></entry>
+	        </map>
+        </property>
+	</bean>
+	<!-- 数据交换平台交易配置类 -->
+	<bean id="tradeMessageConfigTest01" class="com.org.decp.msg.config.TradeMessageConfig">
+		<!-- 交换最终接收方，由数据交换平台分配 -->
+		<property name="destinationID" value="YKZC"/>
+		<!-- 最终接收方系统标识 ，由数据交换平台分配 -->
+		<property name="destinationAppID" value="CRMS00"/>
+		<!-- 压缩标志 ,必填 ,预留项目，暂填1-->
+		<property name="isZip" value="1"/>
+		<!-- 压缩算法,必填 ,预留项目，暂填1 -->
+		<property name="zipType" value="1"/>
+		<!-- 加密标志,必填,0:不加密 1:加密 -->
+		<property name="isEncrypt" value="1"/>
+		<!-- 加密算法 ,1:res 2:rsa-->
+		<property name="encrytType" value="1"/>
+		<!-- 加密私钥 -->
+		<property name="encrytKey" value="2015crmswx"/>
+		<!-- 同步标识 0:异步 1:同步  ,若不填，采用decpCommonMsgCfg中值-->
+		<property name="syncFlag" value="1"/>
+		<!--通讯协议类型 WS:webservice -->
+		<property name="protocolType" value="WS"/>
+		<!-- server服务地址 -->
+		<property name="serverUrl" value="http://localhost:9080/decp-web/services/decpHandle?wsdl"/>
+	</bean>
+	
+	<!-- 数据交换平台服务类 -->
+	<bean id="decpMsgService" class="com.org.decp.msg.DecpMsgService">
+		<property name="msgCfg" ref="decpCommonMsgCfg" />
+		<property name="keyGeneratorContainer" ref="decpKeyGeneratorContainerMsg" />
+		<property name="msgTransferInfoService" ref="msgTransferInfoService"/>
+		<property name="msgExchangePackageService" ref="msgExchangePackageService"/>
+	</bean>
+	
+</beans>

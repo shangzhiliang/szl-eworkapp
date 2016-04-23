@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<!-- namespace命名规则：项目或者构件的英文简写-->
+<mapper namespace="decp">
+	<resultMap id="MsgExchangePackageRM" type="com.yinker.decp.msg.model.base.MsgExchangePackage">
+		<id property="id" column="id" javaType="String" jdbcType="VARCHAR"/>
+		<result property="sourceID" column="sourceID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="destinationID" column="destinationID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="sourceAppID" column="sourceAppID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="destinationAppID" column="destinationAppID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="globalBusinessID" column="globalBusinessID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="messageID" column="messageID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="businessType" column="businessType" javaType="String" jdbcType="VARCHAR"/>
+		<result property="syncFlag" column="syncFlag" javaType="String" jdbcType="CHAR"/>
+		<result property="isZip" column="isZip" javaType="String" jdbcType="CHAR"/>
+		<result property="zipType" column="zipType" javaType="String" jdbcType="CHAR"/>
+		<result property="isEncrypt" column="isEncrypt" javaType="String" jdbcType="CHAR"/>
+		<result property="encrytType" column="encrytType" javaType="String" jdbcType="CHAR"/>
+		<result property="sequence" column="sequence" javaType="Integer" jdbcType="INTEGER"/>
+		<result property="content" column="content" javaType="String" jdbcType="VARCHAR"/>
+		<result property="paramList" column="paramList" javaType="String" jdbcType="VARCHAR"/>
+		<result property="returnCode" column="returnCode" javaType="String" jdbcType="CHAR"/>
+		<result property="returnMessage" column="returnMessage" javaType="String" jdbcType="VARCHAR"/>
+		<result property="sourceMessageID" column="sourceMessageID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="remark" column="remark" javaType="String" jdbcType="VARCHAR"/>
+		<result property="createTime" column="create_time" javaType="Date" jdbcType="TIMESTAMP"/>
+		<result property="lastUpdateTime" column="last_update_time" javaType="Date" jdbcType="TIMESTAMP"/>
+		<collection property="msgTransferInfos" column="{msgId=id}" ofType="java.util.List" select="MsgTransferInfo.selectByEntity"/>
+	</resultMap>
+	<resultMap id="MsgTransferInfoRM" type="com.yinker.decp.msg.model.base.MsgTransferInfo">
+		<id property="id" column="id" javaType="String" jdbcType="VARCHAR"/>
+		<result property="msgId" column="msg_id" javaType="String" jdbcType="VARCHAR"/>
+		<result property="senderID" column="senderID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="receiverID" column="receiverID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="senderAppID" column="senderAppID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="receiverAppID" column="receiverAppID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="sourceMessageID" column="sourceMessageID" javaType="String" jdbcType="VARCHAR"/>
+		<result property="isRetry" column="isRetry" javaType="String" jdbcType="CHAR"/>
+		<result property="sendTime" column="sendTime" javaType="Date" jdbcType="TIMESTAMP"/>
+		<result property="createTime" column="create_time" javaType="Date" jdbcType="TIMESTAMP"/>
+		<result property="lastUpdateTime" column="last_update_time" javaType="Date" jdbcType="TIMESTAMP"/>
+		<association property="msgExchangePackage" column="{id=msg_id}" select="MsgExchangePackage.selectByPK"/>
+	</resultMap>
+</mapper>

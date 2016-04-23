@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- service定义 -->
+	
+	<bean id="msgExchangePackageService" class="com.org.decp.msg.service.MsgExchangePackageService">
+		<property name="modelDao" ref="msgExchangePackageDao" />
+	</bean>
+	
+	<bean id="msgTransferInfoService" class="com.org.decp.msg.service.MsgTransferInfoService">
+		<property name="modelDao" ref="msgTransferInfoDao" />
+	</bean>
+</beans>

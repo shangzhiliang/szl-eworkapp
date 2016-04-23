@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//ibatis.apache.org//DTD Config 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- 全局的映射器启用或禁用缓存  -->
+		<setting name="cacheEnabled" value="true" />
+		<!-- 全局启用或禁用延迟加载。当禁用时，所有关联对象都会即时加载。 -->
+		<setting name="lazyLoadingEnabled" value="true" />
+		<!-- 当启用时，有延迟加载属性的对象在被调用时将会完全加载任意属性。否则，每种属性将会按需要加载。 -->
+		<setting name="aggressiveLazyLoading" value="false"/>
+	</settings>
+	<mappers>
+		<!-- 集成srdp -->
+		<!-- 公共控制 -->
+		<mapper resource="srdp/pm/mapper/mysql/ResultMap.xml" />
+
+		<!-- 权限管理 -->
+		<mapper resource="srdp/rbac/mapper/mysql/ResultMap.xml" />
+
+		<!-- 引入mapper定义文件 -->
+
+		<!-- 公共控制 -->
+		<mapper resource="srdp/pm/mapper/mysql/PmDataDictMapper.xml" />
+		<mapper resource="srdp/pm/mapper/mysql/PmDataDictItemMapper.xml" />
+		<mapper resource="srdp/pm/mapper/mysql/PmParamMapper.xml" />
+		<mapper resource="srdp/pm/mapper/mysql/PmKeyGeneratorMapper.xml" />
+
+		<!-- 权限管理 -->
+		<mapper resource="srdp/rbac/mapper/mysql/RbacUserMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacRoleMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacPermissionMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacGroupMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacAccessLogMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacResourceMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacMenuMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacRolePermissionMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacUserRoleMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacTenantMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacUserDefinedMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacOnlineUserMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacLoginRetryLogMapper.xml" />
+		<mapper resource="srdp/rbac/mapper/mysql/RbacIpBlacklistMapper.xml" />
+		<!-- 集成srdp结束 -->
+		
+		<!-- 引入ResultMap定义文件 -->
+		
+		<!-- 报文处理 -->
+		<mapper resource="com/yinker/decp/msg/model/base/mapper/mysql/ResultMap.xml"/>
+		
+		<!-- 引入mapper定义文件 -->
+		
+		<!-- 报文处理 -->
+		<mapper resource="com/yinker/decp/msg/model/base/mapper/mysql/MsgExchangePackageMapper.xml"/>
+		<mapper resource="com/yinker/decp/msg/model/base/mapper/mysql/MsgTransferInfoMapper.xml"/>
+	</mappers>
+</configuration>

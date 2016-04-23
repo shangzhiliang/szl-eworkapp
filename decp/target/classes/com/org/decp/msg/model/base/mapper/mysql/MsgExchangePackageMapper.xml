@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!-- namespace命名规则: 表对应java类的名称 -->
+<mapper namespace="MsgExchangePackage">
+	<!-- 表的所有字段 -->
+	<sql id="allColumns">
+		<![CDATA[
+			id,
+			sourceID,
+			destinationID,
+			sourceAppID,
+			destinationAppID,
+			globalBusinessID,
+			messageID,
+			businessType,
+			syncFlag,
+			isZip,
+			zipType,
+			isEncrypt,
+			encrytType,
+			sequence,
+			content,
+			paramList,
+			returnCode,
+			returnMessage,
+			sourceMessageID,
+			remark,
+			create_time,
+			last_update_time
+	    ]]>
+  	</sql>
+	
+	<!-- 表的主键字段 -->
+	<sql id="pkColumns">
+		<![CDATA[
+			id
+	    ]]>
+  	</sql>
+	
+	<!-- 根据实体的查询对象进行查询的sql -->
+	<sql id="querySql">
+		select <include refid="allColumns" /> 
+			from msg_exchange_package
+			<where>	      				
+				<if test="id != null and id != ''">
+					<![CDATA[and id = #{id}]]>
+				</if>
+				<if test="sourceID != null and sourceID != ''">
+					<![CDATA[and sourceID = #{sourceID}]]>
+				</if>
+				<if test="destinationID != null and destinationID != ''">
+					<![CDATA[and destinationID = #{destinationID}]]>
+				</if>
+				<if test="sourceAppID != null and sourceAppID != ''">
+					<![CDATA[and sourceAppID = #{sourceAppID}]]>
+				</if>
+				<if test="destinationAppID != null and destinationAppID != ''">
+					<![CDATA[and destinationAppID = #{destinationAppID}]]>
+				</if>
+				<if test="globalBusinessID != null and globalBusinessID != ''">
+					<![CDATA[and globalBusinessID = #{globalBusinessID}]]>
+				</if>
+				<if test="messageID != null and messageID != ''">
+					<![CDATA[and messageID = #{messageID}]]>
+				</if>
+				<if test="businessType != null and businessType != ''">
+					<![CDATA[and businessType = #{businessType}]]>
+				</if>
+				<if test="syncFlag != null and syncFlag != ''">
+					<![CDATA[and syncFlag = #{syncFlag}]]>
+				</if>
+				<if test="isZip != null and isZip != ''">
+					<![CDATA[and isZip = #{isZip}]]>
+				</if>
+				<if test="zipType != null and zipType != ''">
+					<![CDATA[and zipType = #{zipType}]]>
+				</if>
+				<if test="isEncrypt != null and isEncrypt != ''">
+					<![CDATA[and isEncrypt = #{isEncrypt}]]>
+				</if>
+				<if test="encrytType != null and encrytType != ''">
+					<![CDATA[and encrytType = #{encrytType}]]>
+				</if>
+				<if test="sequence != null">
+					<![CDATA[and sequence = #{sequence}]]>
+				</if>
+				<if test="sequenceStart != null">
+					<![CDATA[and sequence >= #{sequenceStart}]]>
+				</if>
+				<if test="sequenceEnd != null">
+					<![CDATA[and sequence <= #{sequenceEnd}]]>
+				</if>
+				<if test="content != null and content != ''">
+					<![CDATA[and content = #{content}]]>
+				</if>
+				<if test="paramList != null and paramList != ''">
+					<![CDATA[and paramList = #{paramList}]]>
+				</if>
+				<if test="returnCode != null and returnCode != ''">
+					<![CDATA[and returnCode = #{returnCode}]]>
+				</if>
+				<if test="returnMessage != null and returnMessage != ''">
+					<![CDATA[and returnMessage = #{returnMessage}]]>
+				</if>
+				<if test="sourceMessageID != null and sourceMessageID != ''">
+					<![CDATA[and sourceMessageID = #{sourceMessageID}]]>
+				</if>
+				<if test="remark != null and remark != ''">
+					<![CDATA[and remark = #{remark}]]>
+				</if>
+				<if test="createTime != null">
+					<![CDATA[and create_time = #{createTime}]]>
+				</if>
+				<if test="createTimeStart != null">
+					<![CDATA[and create_time >= #{createTimeStart}]]>
+				</if>
+				<if test="createTimeEnd != null">
+					<![CDATA[and create_time <= #{createTimeEnd}]]>
+				</if>
+				<if test="lastUpdateTime != null">
+					<![CDATA[and last_update_time = #{lastUpdateTime}]]>
+				</if>
+				<if test="lastUpdateTimeStart != null">
+					<![CDATA[and last_update_time >= #{lastUpdateTimeStart}]]>
+				</if>
+				<if test="lastUpdateTimeEnd != null">
+					<![CDATA[and last_update_time <= #{lastUpdateTimeEnd}]]>
+				</if>
+			</where>
+	</sql>
+
+	<!-- 新增数据 -->
+	<insert id="insert" parameterType="com.yinker.decp.msg.model.base.MsgExchangePackage">
+	    <![CDATA[
+			insert into msg_exchange_package (
+				id,
+				sourceID,
+				destinationID,
+				sourceAppID,
+				destinationAppID,
+				globalBusinessID,
+				messageID,
+				businessType,
+				syncFlag,
+				isZip,
+				zipType,
+				isEncrypt,
+				encrytType,
+				sequence,
+				content,
+				paramList,
+				returnCode,
+				returnMessage,
+				sourceMessageID,
+				remark,
+				create_time,
+				last_update_time
+			) values (
+				#{id},
+				#{sourceID},
+				#{destinationID},
+				#{sourceAppID},
+				#{destinationAppID},
+				#{globalBusinessID},
+				#{messageID},
+				#{businessType},
+				#{syncFlag},
+				#{isZip},
+				#{zipType},
+				#{isEncrypt},
+				#{encrytType},
+				#{sequence},
+				#{content},
+				#{paramList},
+				#{returnCode},
+				#{returnMessage},
+				#{sourceMessageID},
+				#{remark},
+				#{createTime},
+				#{lastUpdateTime}
+			)
+		]]>
+	</insert>
+	
+	<!-- 根据主键删除数据 -->
+    <delete id="deleteByPK" parameterType="com.yinker.decp.msg.model.base.MsgExchangePackagePK">
+        <![CDATA[
+			delete from msg_exchange_package 
+				where
+				id=#{id}
+    	]]>
+    </delete>
+   
+	<!-- 根据主键更新数据 -->
+	<update id="updateByPK" parameterType="com.yinker.decp.msg.model.base.MsgExchangePackage">
+		update msg_exchange_package 
+			<set>
+				<if test="sourceID != null"><![CDATA[sourceID = #{sourceID},]]></if>
+				<if test="destinationID != null"><![CDATA[destinationID = #{destinationID},]]></if>
+				<if test="sourceAppID != null"><![CDATA[sourceAppID = #{sourceAppID},]]></if>
+				<if test="destinationAppID != null"><![CDATA[destinationAppID = #{destinationAppID},]]></if>
+				<if test="globalBusinessID != null"><![CDATA[globalBusinessID = #{globalBusinessID},]]></if>
+				<if test="messageID != null"><![CDATA[messageID = #{messageID},]]></if>
+				<if test="businessType != null"><![CDATA[businessType = #{businessType},]]></if>
+				<if test="syncFlag != null"><![CDATA[syncFlag = #{syncFlag},]]></if>
+				<if test="isZip != null"><![CDATA[isZip = #{isZip},]]></if>
+				<if test="zipType != null"><![CDATA[zipType = #{zipType},]]></if>
+				<if test="isEncrypt != null"><![CDATA[isEncrypt = #{isEncrypt},]]></if>
+				<if test="encrytType != null"><![CDATA[encrytType = #{encrytType},]]></if>
+				<if test="sequence != null"><![CDATA[sequence = #{sequence},]]></if>
+				<if test="content != null"><![CDATA[content = #{content},]]></if>
+				<if test="paramList != null"><![CDATA[paramList = #{paramList},]]></if>
+				<if test="returnCode != null"><![CDATA[returnCode = #{returnCode},]]></if>
+				<if test="returnMessage != null"><![CDATA[returnMessage = #{returnMessage},]]></if>
+				<if test="sourceMessageID != null"><![CDATA[sourceMessageID = #{sourceMessageID},]]></if>
+				<if test="remark != null"><![CDATA[remark = #{remark},]]></if>
+				<if test="createTime != null"><![CDATA[create_time = #{createTime},]]></if>
+				<if test="lastUpdateTime != null"><![CDATA[last_update_time = #{lastUpdateTime},]]></if>
+			</set>
+		where 
+			id=#{id}
+	</update>
+	
+	<!-- 根据主键查询对象 -->
+	<select id="selectByPK" parameterType="com.yinker.decp.msg.model.base.MsgExchangePackagePK" resultMap="decp.MsgExchangePackageRM">
+        select <include refid="allColumns" />
+	    <![CDATA[
+			from msg_exchange_package 
+			where 
+				id=#{id}
+	    ]]>
+	</select>
+	
+	<!-- 根据实体对象查询数据结果集 -->
+	<select id="selectByEntity" parameterType="com.yinker.decp.msg.model.MsgExchangePackageQuery" resultMap="decp.MsgExchangePackageRM">
+		<include refid="querySql"/>
+		<if test="sortColumns != null and sortColumns != ''">
+			order by ${sortColumns}
+		</if>
+	</select>
+	
+	<!-- 分页查询 -查询结果数据 -->
+	<select id="selectByPage" parameterType="com.yinker.decp.msg.model.MsgExchangePackageQuery" resultMap="decp.MsgExchangePackageRM">
+		<include refid="querySql"/>
+		<if test="sortColumns != null and sortColumns != ''">
+			order by ${sortColumns}
+		</if>
+	</select>
+	
+	<!-- 分页查询 -查询记录总数 -->
+	<select id="selectByPageCount" parameterType="com.yinker.decp.msg.model.MsgExchangePackageQuery" resultType="integer">
+		select count(id) from ( <include refid="querySql"/> ) as tmp_msg_exchange_package
+	</select>
+	
+</mapper>

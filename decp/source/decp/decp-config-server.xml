@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs"  
+	 xsi:schemaLocation="
+		http://www.springframework.org/schema/beans    
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://cxf.apache.org/jaxws 
+        http://cxf.apache.org/schemas/jaxws.xsd
+        http://cxf.apache.org/jaxrs  
+        http://cxf.apache.org/schemas/jaxrs.xsd">
+	
+	<!-- 集成CXF，如果项目中已集成CXF，则可将此段注释 -->
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	
+	<!-- 定义各报文类型对应的业务处理类 -->
+	<bean id="BusiTradeTest01" class="com.org.decp.msg.trade.server.Test001Trade">
+	</bean>
+	
+	<!-- 数据交换平台-公用消息属性配置 -->
+	<bean id="decpCommonMsgCfg" class="com.org.decp.msg.config.CommonMessageConfig">
+		<!-- 报文发送方标识，由数据交换平台分配 -->
+		<property name="senderID" value="YKZC" />
+		<!-- 报文接收方标识，由数据交换平台分配 -->
+		<property name="receiverID" value="YKZC" />
+		<!-- 报文发送方系统标识，由数据交换平台分配 -->
+		<property name="senderAppID" value="YKZC" />
+		<!-- 报文接收方系统标识，由数据交换平台分配 -->
+		<property name="receiverAppID" value="YKZC" />
+		<!-- 同步标识: 0:异步 1:同步-->
+		<property name="syncFlag" value="1" />
+		
+        <!-- 配置各报文类型对应的业务处理类 -->
+        <property name="busiTradeMap">
+	        <map>
+	        	<!-- 测试交易 -->
+	        	<entry key="Test01" value-ref="BusiTradeTest01"></entry>
+	        </map>
+        </property>
+        <!-- 交易配置 -->
+		<property name="tradeMsgCfgMap">
+	        <map>
+	        	<!-- 测试交易 -->
+	        	<entry key="Test01" value-ref="tradeMessageConfigTest01"></entry>
+	        </map>
+        </property>
+	</bean>
+	<!-- 数据交换平台交易配置类 -->
+	<bean id="tradeMessageConfigTest01" class="com.org.decp.msg.config.TradeMessageConfig">
+		<!-- 加密公钥，对于使用aes加密公密钥相同，使用rsa加密服务端配置公钥 -->
+		<property name="encrytKey" value="2015crmswx"/>
+	</bean>
+	<!-- 数据交换平台服务类 -->
+	<bean id="decpMsgService" class="com.org.decp.msg.DecpMsgService">
+		<property name="msgCfg" ref="decpCommonMsgCfg" />
+		<property name="keyGeneratorContainer" ref="decpKeyGeneratorContainerMsg" />
+		<property name="msgTransferInfoService" ref="msgTransferInfoService"/>
+		<property name="msgExchangePackageService" ref="msgExchangePackageService"/>
+	</bean>
+	
+	<!-- 发布数据交换平台服务 -->
+	<!-- webservice服务 -->
+	<bean id="dataExchangeServicesImpl" class="com.org.decp.service.webservice.server.impl.DataExchangeServicesImpl" />
+	<jaxws:endpoint id="decpServices" implementor="#dataExchangeServicesImpl" 
+		address="/decpHandle" implementorClass="com.org.decp.service.webservice.server.DataExchangeServices" >
+	</jaxws:endpoint>
+</beans>

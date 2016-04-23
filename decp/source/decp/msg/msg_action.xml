@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- action定义 -->
+	
+	<bean id="msgExchangePackageAction" class="com.org.decp.msg.action.MsgExchangePackageAction" init-method="init" scope="prototype">
+		<property name="entityService" ref="msgExchangePackageService" />
+		<property name="pmDataDictItemService" ref="pmDataDictItemService" />
+		<property name="keyGeneratorContainer" ref="decpKeyGeneratorContainerMsg" />
+	</bean>
+	
+	<bean id="msgTransferInfoAction" class="com.org.decp.msg.action.MsgTransferInfoAction" init-method="init" scope="prototype">
+		<property name="entityService" ref="msgTransferInfoService" />
+		<property name="pmDataDictItemService" ref="pmDataDictItemService" />
+		<property name="keyGeneratorContainer" ref="decpKeyGeneratorContainerMsg" />
+	</bean>
+</beans>

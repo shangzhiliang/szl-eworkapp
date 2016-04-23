@@ -1,0 +1,40 @@
+package com.org.decp.msg;
+
+public class MessageConstants {
+	public static final String SOURCE_ID_YKZC = "YKZC";
+	  public static final String SOURCE_ID_YKLC = "YKLC";
+	  public static final String DESTINATION_APPID_CRMS = "CRMS00";
+	  public static final String DESTINATION_APPID_CRMSWX = "CRMSWX";
+	  public static final String DESTINATION_APPID_CRMSPD = "CRMSPD";
+	  public static final String DESTINATION_APPID_FMS = "FMS000";
+	  public static final String DESTINATION_APPID_ESB = "ESB000";
+	  public static final String BUSSINESS_TYPE_COMMON_RETURN = "000000";
+	  public static final String SYNC_FLAG_YES = "1";
+	  public static final String SYNC_FLAG_NO = "0";
+	  public static final String IS_RETRY_NO = "0";
+	  public static final String IS_RETRY_YES = "1";
+	  public static final String IS_ENCRYPT_NO = "0";
+	  public static final String IS_ENCRYPT_YES = "1";
+	  public static final String ENCRYPT_TYPE_ASE = "1";
+	  public static final String ENCRYPT_TYPE_RSA = "2";
+	  public static final String MESS_CONTENT_IS_MUST = "M";
+	  public static final String MESS_CONTENT_IS_NONMUST = "O";
+	  public static final String MESS_RETURN_CODE_SUCC = "00";
+	  public static final String MESS_RETURN_CODE_SIGNFAIL = "01";
+	  public static final String MESS_RETURN_CODE_ENCRYFAIL = "02";
+	  public static final String MESS_RETURN_CODE_ANALYFAIL = "03";
+	  public static final String MESS_RETURN_CODE_OTHER = "04";
+	  public static final String MESS_CONTENT_CHECK_SUCC = "00";
+	  public static final String MESS_CREATE_FAILE = "M01";
+	  public static final String MESS_SEDN_FAILE = "M02";
+	  public static final String MESS_RECEIVE_FAILE = "M03";
+	  public static final String MESS_NO_RECEIVE_INFO = "M05";
+	  public static final String MESS_PARSE_FAILE = "M06";
+	  public static final String MESS_RETURN_FAILE = "M90";
+	  public static final String MESS_CREATE_SUCC = "M00";
+	  public static final String TRADE_TYPE_WS = "WS";
+	  public static final String TRADE_TYPE_MQ = "MQ";
+	  public static final String TRADE_TYPE_HTTP = "HTTP";
+	  public static final String REQUEST_CLIENT_FLAG = "1";
+	  public static final String REQUEST_SERVER_FLAG = "2";
+}
