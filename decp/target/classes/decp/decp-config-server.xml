@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-   	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+   	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jaxws="http://cxf.apache.org/jaxws"
 	xmlns:jaxrs="http://cxf.apache.org/jaxrs"  
-	 xsi:schemaLocation="
+	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans    
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://cxf.apache.org/jaxws 
@@ -63,6 +64,7 @@
 	<!-- 发布数据交换平台服务 -->
 	<!-- webservice服务 -->
 	<bean id="dataExchangeServicesImpl" class="com.org.decp.service.webservice.server.impl.DataExchangeServicesImpl" />
+	
 	<jaxws:endpoint id="decpServices" implementor="#dataExchangeServicesImpl" 
 		address="/decpHandle" implementorClass="com.org.decp.service.webservice.server.DataExchangeServices" >
 	</jaxws:endpoint>
