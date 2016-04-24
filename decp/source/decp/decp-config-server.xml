@@ -64,7 +64,6 @@
 	<!-- 发布数据交换平台服务 -->
 	<!-- webservice服务 -->
 	<bean id="dataExchangeServicesImpl" class="com.org.decp.service.webservice.server.impl.DataExchangeServicesImpl" />
-	
 	<jaxws:endpoint id="decpServices" implementor="#dataExchangeServicesImpl" 
 		address="/decpHandle" implementorClass="com.org.decp.service.webservice.server.DataExchangeServices" >
 	</jaxws:endpoint>
