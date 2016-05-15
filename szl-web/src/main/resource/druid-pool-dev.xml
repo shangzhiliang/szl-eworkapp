@@ -3,7 +3,7 @@
 <properties>  
     <comment>druid pool 配置文件</comment>
     <!-- 基本属性 url、user、password -->
-    <entry key="url">jdbc:mysql://10.1.5.111:3306/idp_dev?useUnicode=true&amp;characterEncoding=utf-8</entry>
+    <entry key="url">jdbc:mysql://localhost:3306/idp_dev?useUnicode=true&amp;characterEncoding=utf-8</entry>
     <entry key="username">idp_dev</entry>
     <entry key="password">idp_dev</entry>
     

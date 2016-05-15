@@ -7,25 +7,25 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
-	    <dependency>
-		   <groupId>org.quartz-scheduler</groupId>
-		   <artifactId>quartz</artifactId>
-		   <version>2.2.1</version>
-	    </dependency>
-	    
-	   <!-- 添加decp-数据交换平台 -->
 		<dependency>
-		    <groupId>swork.common</groupId>
-  			<artifactId>decp</artifactId>
-	    	<type>jar</type>
-	    	<version>0.0.1-SNAPSHOT</version>
-	    	<scope>compile</scope>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.1</version>
 		</dependency>
-	    
-	    <dependency>
-		  <groupId>com.thoughtworks.xstream</groupId>
-		  <artifactId>xstream</artifactId>
-		  <version>1.4.8</version>
+
+		<!-- 添加decp-数据交换平台 -->
+		<dependency>
+			<groupId>swork.common</groupId>
+			<artifactId>decp</artifactId>
+			<type>jar</type>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.8</version>
 		</dependency>
 		<!-- 数据库驱动 -->
 		<dependency>
@@ -33,7 +33,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.14</version>
 		</dependency>
-		
+
 		<!-- 代扣需要JAR包 -->
 		<dependency>
 			<groupId>commons-codec</groupId>
@@ -45,21 +45,21 @@
 			<artifactId>commons-httpclient</artifactId>
 			<version>3.1</version>
 		</dependency>
-		<!-- 添加Servlet2.4 规格说明作为依赖  -->
+		<!-- 添加Servlet2.4 规格说明作为依赖 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- ireport依赖包 -->
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
 			<version>6.1.0</version>
 		</dependency>
-		<!-- ireport需要groovy运行环境  -->
+		<!-- ireport需要groovy运行环境 -->
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
@@ -69,7 +69,7 @@
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itext-asian</artifactId>
 			<version>5.2.0</version>
-		</dependency>		
+		</dependency>
 
 		<dependency>
 			<groupId>dom4j</groupId>
@@ -86,19 +86,27 @@
 			<artifactId>gson</artifactId>
 			<version>2.6</version>
 		</dependency>
+
 		<dependency>
-		    <groupId>org.apache.maven.plugins</groupId>
-		    <artifactId>maven-resources-plugin</artifactId>
-		    <version>2.7</version>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.8.1</version>
 		</dependency>
-			
+
 		<dependency>
-	   	 	<groupId>junit</groupId>
-	    	<artifactId>junit</artifactId>
-	   	 	<version>4.11</version>
-	   	 	<scope>compile</scope>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>2.7</version>
 		</dependency>
-		
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>compile</scope>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -109,7 +117,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-			<!-- 配置编译坏境 jdk版本为1.6  字符集为UTF-8 -->
+			<!-- 配置编译坏境 jdk版本为1.6 字符集为UTF-8 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

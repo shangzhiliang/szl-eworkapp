@@ -10,6 +10,7 @@ import javax.xml.bind.Marshaller;
 import org.junit.Test;
 
 
+
 public class TestBeanListToXml {
 
 	@Test

@@ -67,7 +67,4 @@
 	<jaxws:endpoint id="decpServices" implementor="#dataExchangeServicesImpl" 
 		address="/decpHandle" implementorClass="com.org.decp.service.webservice.server.DataExchangeServices" >
 	</jaxws:endpoint>
-	<jaxws:endpoint>
-	
-	</jaxws:endpoint>
 </beans>
